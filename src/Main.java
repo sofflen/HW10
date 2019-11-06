@@ -4,6 +4,7 @@ import Tasks.QuadEq;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class Main {
 
@@ -18,7 +19,16 @@ public class Main {
         collection.add("doom");
         System.out.println(collection);
         System.out.println(new Collections().noDups(collection));
-        new Arrays().iterator(ints);
         new QuadEq().rootsCalc(1, 8, 15);
+
+        Arrays<Integer> arr = new Arrays<>(ints);
+        Iterator<Integer> it = arr.iterator();
+        while (it.hasNext()) {
+            Integer i = it.next();
+            if (it.hasNext())
+                System.out.print(i + ", ");
+            else
+                System.out.println(i);
+        }
     }
 }
